@@ -16,17 +16,6 @@ export const siteData = {
   ],
   "pages": [
     {
-      "title": "第一遍",
-      "frontmatter": {
-        "title": "第一遍",
-        "date": "2023-4-12"
-      },
-      "regularPath": "/",
-      "relativePath": "README.md",
-      "key": "v-7c812c3c",
-      "path": "/"
-    },
-    {
       "title": "demo演示",
       "frontmatter": {
         "title": "demo演示",
@@ -42,15 +31,22 @@ export const siteData = {
       "regularPath": "/blogs/1.html",
       "relativePath": "blogs/1.md",
       "key": "v-1da4b132",
-      "path": "/blogs/1.html"
+      "path": "/blogs/1.html",
+      "lastUpdated": "41 分钟前",
+      "lastUpdatedTimestamp": 1681374264000
     },
     {
-      "title": "hello js",
-      "frontmatter": {},
-      "regularPath": "/blogs/js/1.html",
-      "relativePath": "blogs/js/1.md",
-      "key": "v-674fd5ce",
-      "path": "/blogs/js/1.html"
+      "title": "第一篇测试",
+      "frontmatter": {
+        "title": "第一篇测试",
+        "date": "2023-4-12"
+      },
+      "regularPath": "/",
+      "relativePath": "README.md",
+      "key": "v-7c812c3c",
+      "path": "/",
+      "lastUpdated": "10 分钟前",
+      "lastUpdatedTimestamp": 1681376139000
     },
     {
       "title": "hello css",
@@ -70,14 +66,35 @@ export const siteData = {
           "title": "demo2",
           "slug": "demo2"
         }
-      ]
+      ],
+      "lastUpdated": "41 分钟前",
+      "lastUpdatedTimestamp": 1681374264000
     },
     {
       "frontmatter": {},
       "regularPath": "/blogs/2.html",
       "relativePath": "blogs/2.md",
       "key": "v-700367d2",
-      "path": "/blogs/2.html"
+      "path": "/blogs/2.html",
+      "lastUpdated": "41 分钟前",
+      "lastUpdatedTimestamp": 1681374264000
+    },
+    {
+      "title": "hello js",
+      "frontmatter": {},
+      "regularPath": "/blogs/js/1.html",
+      "relativePath": "blogs/js/1.md",
+      "key": "v-674fd5ce",
+      "path": "/blogs/js/1.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "新的标题",
+          "slug": "新的标题"
+        }
+      ],
+      "lastUpdated": "41 分钟前",
+      "lastUpdatedTimestamp": 1681374264000
     },
     {
       "frontmatter": {
