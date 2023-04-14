@@ -16,6 +16,20 @@ export const siteData = {
   ],
   "pages": [
     {
+      "title": "Home",
+      "frontmatter": {
+        "home": true,
+        "heroImage": "/logo.png",
+        "heroText": null
+      },
+      "regularPath": "/",
+      "relativePath": "README.md",
+      "key": "v-7c812c3c",
+      "path": "/",
+      "lastUpdated": "21 小时前",
+      "lastUpdatedTimestamp": 1681376139000
+    },
+    {
       "title": "demo演示",
       "frontmatter": {
         "title": "demo演示",
@@ -26,27 +40,53 @@ export const siteData = {
         "tags": [
           "demo"
         ],
-        "sticky": 1
+        "sticky": 1,
+        "publish": false
       },
       "regularPath": "/blogs/1.html",
       "relativePath": "blogs/1.md",
       "key": "v-1da4b132",
       "path": "/blogs/1.html",
-      "lastUpdated": "41 分钟前",
+      "lastUpdated": "21 小时前",
       "lastUpdatedTimestamp": 1681374264000
     },
     {
-      "title": "第一篇测试",
+      "frontmatter": {},
+      "regularPath": "/blogs/2.html",
+      "relativePath": "blogs/2.md",
+      "key": "v-700367d2",
+      "path": "/blogs/2.html",
+      "lastUpdated": "21 小时前",
+      "lastUpdatedTimestamp": 1681374264000
+    },
+    {
+      "title": "介绍",
       "frontmatter": {
-        "title": "第一篇测试",
-        "date": "2023-4-12"
+        "title": "介绍",
+        "date": "2023-4-14",
+        "publish": false
       },
-      "regularPath": "/",
-      "relativePath": "README.md",
-      "key": "v-7c812c3c",
-      "path": "/",
-      "lastUpdated": "10 分钟前",
-      "lastUpdatedTimestamp": 1681376139000
+      "regularPath": "/blogs/",
+      "relativePath": "blogs/README.md",
+      "key": "v-7a7380e5",
+      "path": "/blogs/"
+    },
+    {
+      "title": "hello js",
+      "frontmatter": {},
+      "regularPath": "/blogs/js/1.html",
+      "relativePath": "blogs/js/1.md",
+      "key": "v-674fd5ce",
+      "path": "/blogs/js/1.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "新的标题",
+          "slug": "新的标题"
+        }
+      ],
+      "lastUpdated": "21 小时前",
+      "lastUpdatedTimestamp": 1681376777000
     },
     {
       "title": "hello css",
@@ -67,34 +107,16 @@ export const siteData = {
           "slug": "demo2"
         }
       ],
-      "lastUpdated": "41 分钟前",
+      "lastUpdated": "21 小时前",
       "lastUpdatedTimestamp": 1681374264000
     },
     {
+      "title": "hello",
       "frontmatter": {},
-      "regularPath": "/blogs/2.html",
-      "relativePath": "blogs/2.md",
-      "key": "v-700367d2",
-      "path": "/blogs/2.html",
-      "lastUpdated": "41 分钟前",
-      "lastUpdatedTimestamp": 1681374264000
-    },
-    {
-      "title": "hello js",
-      "frontmatter": {},
-      "regularPath": "/blogs/js/1.html",
-      "relativePath": "blogs/js/1.md",
-      "key": "v-674fd5ce",
-      "path": "/blogs/js/1.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "新的标题",
-          "slug": "新的标题"
-        }
-      ],
-      "lastUpdated": "41 分钟前",
-      "lastUpdatedTimestamp": 1681374264000
+      "regularPath": "/blogs/vue/1.html",
+      "relativePath": "blogs/vue/1.md",
+      "key": "v-f01adaf6",
+      "path": "/blogs/vue/1.html"
     },
     {
       "frontmatter": {
@@ -145,6 +167,7 @@ export const siteData = {
   "themeConfig": {
     "author": "chengyisan",
     "logo": "/logo.png",
+    "authorAvatar": "/avatar.png",
     "type": "blog",
     "lastUpdated": "上次更新",
     "nav": [
@@ -153,56 +176,51 @@ export const siteData = {
         "link": "/"
       },
       {
+        "text": "文档",
+        "link": "/blogs/"
+      },
+      {
         "text": "关于我",
         "items": [
           {
             "text": "掘金",
-            "link": "https://juejin.cn/user/1121946905352599"
+            "link": "https://juejin.cn/user/1121946905352599",
+            "icon": "reco-juejin"
           },
           {
             "text": "Github",
-            "link": "https://github.com/Pine-Nuts"
+            "link": "https://github.com/Pine-Nuts",
+            "icon": "reco-github"
           }
         ]
       }
     ],
     "subSidebar": "auto",
-    "sidebar": [
-      {
-        "title": "欢迎学习",
-        "path": "/",
-        "collapsable": false,
-        "children": [
-          {
-            "title": "博客简介",
-            "path": "/"
-          }
-        ]
-      },
-      {
-        "title": "基础篇",
-        "collapsable": true,
-        "children": [
-          {
-            "title": "CSS",
-            "path": "/blogs/css/1"
-          },
-          {
-            "title": "JS",
-            "path": "/blogs/js/1"
-          }
-        ]
-      }
-    ],
-    "blogConfig": {
-      "category": {
-        "location": 2,
-        "text": "博客"
-      },
-      "tag": {
-        "location": 4,
-        "text": "标签"
-      }
+    "sidebar": {
+      "/blogs/": [
+        {
+          "title": "基础",
+          "collapsable": false,
+          "children": [
+            {
+              "title": "介绍",
+              "path": "/blogs/"
+            },
+            {
+              "title": "CSS",
+              "path": "/blogs/css/1"
+            },
+            {
+              "title": "JavaScript",
+              "path": "/blogs/js/1"
+            },
+            {
+              "title": "Vue",
+              "path": "/blogs/vue/1"
+            }
+          ]
+        }
+      ]
     }
   },
   "locales": {

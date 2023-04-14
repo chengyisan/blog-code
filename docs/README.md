@@ -1,9 +1,10 @@
 ---
-title: 第一篇测试
-date: '2023-4-12'
-# home: true
-# heroText: Chengyisan
-# bgImage: '/logo.png'
-# bgImageStyle: { height: '100%', boxShadow: '0 15px 18px rgba(0,0,0,0.2)'}
+home: true
+heroImage: /logo.png
+heroText: null
 ---
-# 111
+<!-- <template>
+  <div>hello word</div>
+</template>
+<script>
+</script> -->
