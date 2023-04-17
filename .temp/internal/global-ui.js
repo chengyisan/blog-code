@@ -1,4 +1,5 @@
 export default [
   "BackToTop",
-  "KanBanNiang"
+  "KanBanNiang",
+  "BgMusic"
 ]

@@ -82,7 +82,15 @@ module.exports = {
       }
     ],
     [
-      '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+      'copyright',  // 复制增加著作权信息
+      {
+        authorName: '乘以三', // 选中的文字将无法被复制
+        minLength: 10, // 如果长度超过  10 个字符
+      },
+    ],
+    ['vuepress-plugin-nprogress'], // 切换页面加载滚动条
+    [
+      '@vuepress-reco/vuepress-plugin-kan-ban-niang', // 看板娘
       {
         theme: ['blackCat'],
         messages: {
@@ -92,14 +100,7 @@ module.exports = {
       }
     ],
     [
-      'copyright',  // 复制增加著作权信息
-      {
-        authorName: '乘以三', // 选中的文字将无法被复制
-        minLength: 10, // 如果长度超过  10 个字符
-      },
-    ],
-    ['vuepress-plugin-nprogress'] // 切换页面加载滚动条
-    ['@vuepress-reco/vuepress-plugin-bgm-player',
+      '@vuepress-reco/vuepress-plugin-bgm-player', // 音乐播放器
       {
         audios: [
           // 本地文件示例
