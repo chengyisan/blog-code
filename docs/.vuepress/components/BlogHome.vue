@@ -2,15 +2,13 @@
  * @Author: srcheng 17755456856@163.com
  * @Date: 2023-04-14 15:10:10
  * @LastEditors: srcheng 17755456856@163.com
- * @LastEditTime: 2023-04-17 14:31:01
+ * @LastEditTime: 2023-04-17 15:09:10
  * @FilePath: \blog\docs\.vuepress\components\BlogHome.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <div class="home-container">
-    <!-- <div>Hello World</div> -->
     <img :src="imageSrc" alt="" srcset="">
-    <!-- <div>我写下很多描述文字，最后还是只留下了，Hello World</div> -->
   </div>
 </template>
 
@@ -31,6 +29,9 @@ export default {
   },
   mounted() {
     this.detectDeviceType();
+    window.addEventListener('resize', () => {
+      this.detectDeviceType();
+    })
   },
   methods: {
     detectDeviceType() {
@@ -39,8 +40,12 @@ export default {
       } else {
         this.deviceType = 'pc';
       }
-      console.log(this.deviceType)
     },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', () => {
+      this.detectDeviceType();
+    });
   },
 }
 </script>
