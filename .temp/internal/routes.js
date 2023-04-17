@@ -29,11 +29,11 @@ export const routes = [
     },
   },
   {
-    name: "v-700367d2",
-    path: "/blogs/2.html",
+    name: "v-33645025",
+    path: "/blogs/css/1.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-700367d2").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-33645025").then(next)
     },
   },
   {
@@ -49,6 +49,14 @@ export const routes = [
     redirect: "/blogs/"
   },
   {
+    name: "v-f01adaf6",
+    path: "/blogs/vue/1.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-f01adaf6").then(next)
+    },
+  },
+  {
     name: "v-674fd5ce",
     path: "/blogs/js/1.html",
     component: GlobalLayout,
@@ -57,19 +65,11 @@ export const routes = [
     },
   },
   {
-    name: "v-33645025",
-    path: "/blogs/css/1.html",
+    name: "v-700367d2",
+    path: "/blogs/2.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-33645025").then(next)
-    },
-  },
-  {
-    name: "v-f01adaf6",
-    path: "/blogs/vue/1.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-f01adaf6").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-700367d2").then(next)
     },
   },
   {

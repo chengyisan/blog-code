@@ -19,15 +19,15 @@ export const siteData = {
       "title": "Home",
       "frontmatter": {
         "home": true,
-        "heroImage": "/logo.png",
+        "heroImage": null,
         "heroText": null
       },
       "regularPath": "/",
       "relativePath": "README.md",
       "key": "v-7c812c3c",
       "path": "/",
-      "lastUpdated": "21 小时前",
-      "lastUpdatedTimestamp": 1681376139000
+      "lastUpdated": "3 天前",
+      "lastUpdatedTimestamp": 1681452904000
     },
     {
       "title": "demo演示",
@@ -47,46 +47,8 @@ export const siteData = {
       "relativePath": "blogs/1.md",
       "key": "v-1da4b132",
       "path": "/blogs/1.html",
-      "lastUpdated": "21 小时前",
-      "lastUpdatedTimestamp": 1681374264000
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/blogs/2.html",
-      "relativePath": "blogs/2.md",
-      "key": "v-700367d2",
-      "path": "/blogs/2.html",
-      "lastUpdated": "21 小时前",
-      "lastUpdatedTimestamp": 1681374264000
-    },
-    {
-      "title": "介绍",
-      "frontmatter": {
-        "title": "介绍",
-        "date": "2023-4-14",
-        "publish": false
-      },
-      "regularPath": "/blogs/",
-      "relativePath": "blogs/README.md",
-      "key": "v-7a7380e5",
-      "path": "/blogs/"
-    },
-    {
-      "title": "hello js",
-      "frontmatter": {},
-      "regularPath": "/blogs/js/1.html",
-      "relativePath": "blogs/js/1.md",
-      "key": "v-674fd5ce",
-      "path": "/blogs/js/1.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "新的标题",
-          "slug": "新的标题"
-        }
-      ],
-      "lastUpdated": "21 小时前",
-      "lastUpdatedTimestamp": 1681376777000
+      "lastUpdated": "3 天前",
+      "lastUpdatedTimestamp": 1681452904000
     },
     {
       "title": "hello css",
@@ -107,8 +69,22 @@ export const siteData = {
           "slug": "demo2"
         }
       ],
-      "lastUpdated": "21 小时前",
+      "lastUpdated": "4 天前",
       "lastUpdatedTimestamp": 1681374264000
+    },
+    {
+      "title": "介绍",
+      "frontmatter": {
+        "title": "介绍",
+        "date": "2023-4-14",
+        "publish": false
+      },
+      "regularPath": "/blogs/",
+      "relativePath": "blogs/README.md",
+      "key": "v-7a7380e5",
+      "path": "/blogs/",
+      "lastUpdated": "3 天前",
+      "lastUpdatedTimestamp": 1681453245000
     },
     {
       "title": "hello",
@@ -116,7 +92,35 @@ export const siteData = {
       "regularPath": "/blogs/vue/1.html",
       "relativePath": "blogs/vue/1.md",
       "key": "v-f01adaf6",
-      "path": "/blogs/vue/1.html"
+      "path": "/blogs/vue/1.html",
+      "lastUpdated": "3 天前",
+      "lastUpdatedTimestamp": 1681452904000
+    },
+    {
+      "title": "hello js",
+      "frontmatter": {},
+      "regularPath": "/blogs/js/1.html",
+      "relativePath": "blogs/js/1.md",
+      "key": "v-674fd5ce",
+      "path": "/blogs/js/1.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "新的标题",
+          "slug": "新的标题"
+        }
+      ],
+      "lastUpdated": "4 天前",
+      "lastUpdatedTimestamp": 1681376777000
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/blogs/2.html",
+      "relativePath": "blogs/2.md",
+      "key": "v-700367d2",
+      "path": "/blogs/2.html",
+      "lastUpdated": "3 天前",
+      "lastUpdatedTimestamp": 1681452904000
     },
     {
       "frontmatter": {
@@ -168,7 +172,7 @@ export const siteData = {
     "author": "chengyisan",
     "logo": "/logo.png",
     "authorAvatar": "/avatar.png",
-    "type": "blog",
+    "type": "BlogHome",
     "lastUpdated": "上次更新",
     "nav": [
       {

@@ -1,11 +1,3 @@
-/*
- * @Author: srcheng 17755456856@163.com
- * @Date: 2023-04-12 17:13:43
- * @LastEditors: srcheng 17755456856@163.com
- * @LastEditTime: 2023-04-14 13:48:57
- * @FilePath: \blog\docs\.vuepress\config.js
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 const moment = require('moment');
 
 module.exports = {
@@ -25,7 +17,8 @@ module.exports = {
     author: 'chengyisan',
     logo: '/logo.png',
     authorAvatar: '/avatar.png',
-    type: 'blog',
+    // type: 'blog',
+    type: 'BlogHome',
     lastUpdated: '上次更新',
     nav: [
       {text: '首页', link: '/'},
@@ -78,7 +71,7 @@ module.exports = {
   },
   plugins: [
     [
-      '@vuepress/last-updated',
+      '@vuepress/last-updated', // 最新更新时间格式化
       {
         transformer: (timestamp, lang) => {
           // 不要忘了安装 moment
@@ -86,6 +79,43 @@ module.exports = {
           moment.locale(lang)
           return moment(timestamp).fromNow()
         }
+      }
+    ],
+    [
+      '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+      {
+        theme: ['blackCat'],
+        messages: {
+          home: 'Carl&Ellie',
+          close: '返回喵星'
+        }
+      }
+    ],
+    [
+      'copyright',  // 复制增加著作权信息
+      {
+        authorName: '乘以三', // 选中的文字将无法被复制
+        minLength: 10, // 如果长度超过  10 个字符
+      },
+    ],
+    ['vuepress-plugin-nprogress'] // 切换页面加载滚动条
+    ['@vuepress-reco/vuepress-plugin-bgm-player',
+      {
+        audios: [
+          // 本地文件示例
+          {
+            name: 'Married Life',
+            artist: 'UP',
+            url: '/bgm/Married Life.mp3',
+            cover: '/bgm/UP.jpg'
+          }
+        ],
+        // 是否默认缩小
+        autoShrink: true ,
+        // 缩小时缩为哪种模式
+        shrinkMode: 'float',
+        // 悬浮窗样式
+        floatStyle:{ bottom: '10px', 'z-index': '999999' }
       }
     ]
   ]

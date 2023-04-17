@@ -1,10 +1,5 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: null
 heroText: null
 ---
-<!-- <template>
-  <div>hello word</div>
-</template>
-<script>
-</script> -->
