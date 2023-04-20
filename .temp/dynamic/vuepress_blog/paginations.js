@@ -5,21 +5,4 @@
 import sorters from './pageSorters'
 import filters from './pageFilters'
 
-export default [{
-  pid: "tags",
-  id: "demo",
-  filter: filters.tags,
-  sorter: sorters.tags,
-  pages: [{"path":"/tag/demo/","interval":[0,1]}],
-  prevText: "Prev",
-  nextText: "Next",
-},
-{
-  pid: "categories",
-  id: "随笔",
-  filter: filters.categories,
-  sorter: sorters.categories,
-  pages: [{"path":"/categories/随笔/","interval":[0,1]}],
-  prevText: "Prev",
-  nextText: "Next",
-}]
+export default []

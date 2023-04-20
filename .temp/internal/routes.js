@@ -21,11 +21,35 @@ export const routes = [
     redirect: "/"
   },
   {
+    name: "v-700367d2",
+    path: "/blogs/2.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-700367d2").then(next)
+    },
+  },
+  {
     name: "v-1da4b132",
     path: "/blogs/1.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-1da4b132").then(next)
+    },
+  },
+  {
+    name: "v-33645025",
+    path: "/blogs/css/1.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-33645025").then(next)
+    },
+  },
+  {
+    name: "v-674fd5ce",
+    path: "/blogs/js/1.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-674fd5ce").then(next)
     },
   },
   {
@@ -41,12 +65,16 @@ export const routes = [
     redirect: "/blogs/"
   },
   {
-    name: "v-674fd5ce",
-    path: "/blogs/js/1.html",
+    name: "v-48d84efa",
+    path: "/start/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-674fd5ce").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-48d84efa").then(next)
     },
+  },
+  {
+    path: "/start/index.html",
+    redirect: "/start/"
   },
   {
     name: "v-f01adaf6",
@@ -54,22 +82,6 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-f01adaf6").then(next)
-    },
-  },
-  {
-    name: "v-33645025",
-    path: "/blogs/css/1.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-33645025").then(next)
-    },
-  },
-  {
-    name: "v-700367d2",
-    path: "/blogs/2.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-700367d2").then(next)
     },
   },
   {
@@ -110,32 +122,6 @@ export const routes = [
   {
     path: "/timeline/index.html",
     redirect: "/timeline/"
-  },
-  {
-    name: "v-1528037c",
-    path: "/tag/demo/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Tag", "v-1528037c").then(next)
-    },
-    meta: {"pid":"tags","id":"demo"}
-  },
-  {
-    path: "/tag/demo/index.html",
-    redirect: "/tag/demo/"
-  },
-  {
-    name: "v-2bf76980",
-    path: "/categories/随笔/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Category", "v-2bf76980").then(next)
-    },
-    meta: {"pid":"categories","id":"随笔"}
-  },
-  {
-    path: "/categories/随笔/index.html",
-    redirect: "/categories/随笔/"
   },
   {
     path: '*',

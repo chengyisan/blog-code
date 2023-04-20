@@ -3,10 +3,11 @@
  */
 export default {
   "v-7c812c3c": () => import("D:\\vueworkspace\\blog\\docs\\README.md"),
+  "v-700367d2": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\2.md"),
   "v-1da4b132": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\1.md"),
-  "v-7a7380e5": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\README.md"),
-  "v-674fd5ce": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\js\\1.md"),
-  "v-f01adaf6": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\vue\\1.md"),
   "v-33645025": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\css\\1.md"),
-  "v-700367d2": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\2.md") 
+  "v-674fd5ce": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\js\\1.md"),
+  "v-7a7380e5": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\README.md"),
+  "v-48d84efa": () => import("D:\\vueworkspace\\blog\\docs\\start\\README.md"),
+  "v-f01adaf6": () => import("D:\\vueworkspace\\blog\\docs\\blogs\\vue\\1.md") 
 }

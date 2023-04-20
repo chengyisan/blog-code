@@ -7,7 +7,8 @@ import m2 from "D:\\vueworkspace\\blog\\node_modules\\@vuepress\\plugin-medium-z
 import m3 from "D:\\vueworkspace\\blog\\node_modules\\@vuepress\\plugin-nprogress\\clientRootMixin.js"
 import m4 from "D:\\vueworkspace\\blog\\node_modules\\vuepress-plugin-smooth-scroll\\lib\\clientRootMixin.js"
 import m5 from "D:\\vueworkspace\\blog\\node_modules\\vuepress-plugin-copyright\\src\\rootMixin.js"
-import m6 from "D:\\vueworkspace\\blog\\node_modules\\vuepress-plugin-nprogress\\lib\\clientRootMixin.js"
+import m6 from "D:\\vueworkspace\\blog\\node_modules\\vuepress-plugin-code-copy\\clientRootMixin.js"
+import m7 from "D:\\vueworkspace\\blog\\node_modules\\vuepress-plugin-nprogress\\lib\\clientRootMixin.js"
 
 export default [
   m0,
@@ -16,5 +17,6 @@ export default [
   m3,
   m4,
   m5,
-  m6
+  m6,
+  m7
 ]
