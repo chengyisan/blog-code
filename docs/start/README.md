@@ -164,7 +164,7 @@ date: '2023-4-18'
 ```
   D:\blog\docs
   ├─README.md
-  ├─CSS
+  ├─CSS_PART
   |  ├─part_1.md
   |  └part_2.md
   ├─.vuepress
@@ -185,11 +185,11 @@ date: '2023-4-18'
       },
       {
         title: "CSS",
-        // path: "/CSS/part_1", // 不跳转
+        // path: "/CSS_PART/part_1", // 不跳转
         collapsable: false, // 是否折叠
         children: [
-          { title: "part1", path: "/CSS/part_1"},
-          { title: "part2", path: "/CSS/part_2" },
+          { title: "part1", path: "/CSS_PART/part_1"},
+          { title: "part2", path: "/CSS_PART/part_2" },
         ]
       }
     ],
