@@ -57,7 +57,7 @@ date: '2023-4-18'
   npm install vuePress -d
 ```
 
-创建第一篇文章，先创建一个docs文件夹，以及一个readme.md文件。该文件类似于vue项目下的index.vue页面。并写入hello World为文章内容：
+创建第一篇文章，先创建一个docs文件夹，以及一个README.md文件。该文件类似于vue项目下的index.vue页面。并写入hello World为文章内容：
 
 ```md
   // 此时是在blog文件夹内
@@ -159,7 +159,7 @@ date: '2023-4-18'
 
 ### 3.添加侧边栏
 
-在添加侧边栏之前，先添加一些.md文件：
+在添加侧边栏之前，先添加一些md文件：
 
 ```
   D:\blog\docs
@@ -172,27 +172,30 @@ date: '2023-4-18'
 ```
 
 ```js
-  themeConfig: {
-    nav: [...],
-    sidebar: [ // 单侧边栏
-      {
-        title: "欢迎光临",
-        path: "/", // 点击父级节点是否跳转
-        collapsable: true, // 是否折叠
-        children: [
-          { title: "开心一下", path: "/" }
-        ]
-      },
-      {
-        title: "CSS",
-        // path: "/CSS_PART/part_1", // 不跳转
-        collapsable: false, // 是否折叠
-        children: [
-          { title: "part1", path: "/CSS_PART/part_1"},
-          { title: "part2", path: "/CSS_PART/part_2" },
-        ]
-      }
-    ],
+  module.exports = {
+    ...
+    themeConfig: {
+      nav: [...],
+      sidebar: [ // 单侧边栏
+        {
+          title: "欢迎光临",
+          path: "/", // 点击父级节点是否跳转
+          collapsable: true, // 是否折叠
+          children: [
+            { title: "开心一下", path: "/" }
+          ]
+        },
+        {
+          title: "CSS",
+          // path: "/CSS_PART/part_1", // 不跳转
+          collapsable: false, // 是否折叠
+          children: [
+            { title: "part1", path: "/CSS_PART/part_1"},
+            { title: "part2", path: "/CSS_PART/part_2" }
+          ]
+        }
+      ]
+    }
   }
 ```
 
@@ -201,3 +204,167 @@ date: '2023-4-18'
 ![avatar](/image/part_3.png)
 
 至此一个网页的基本形态也就搭建完成了。
+
+### 4.添加主题
+
+基本功能已经实现，但是要实现loading，切换等效果这些还不够，引入主题帮助实现高级功能，这里推荐使用vuepress-theme-reco：
+
+```
+  npm install vuepress-theme-reco --save -dev
+```
+
+同时在congfig.js中引用主题
+
+```js
+  module.exports = {
+    ...
+    themeConfig: {
+      nav: [...],
+      sidebar: [...]
+    },
+    theme: "reco"
+  }
+```
+
+对应效果如下：
+
+![avatar](/image/part_4.png)
+
+点击画板，可以切换模式，具体自行体验。
+
+### 5.修改主题色
+
+Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文件夹创建styles文件夹以及palette.styl文件：
+
+```
+  D:\blog\docs\.vuepress
+  ├─config.js
+  ├─styles
+  |   └palette.styl
+```
+
+设置主题色：
+
+```style
+  $accentColor = #0093dd // 主题颜色
+```
+
+效果如下:
+
+![avatar](/image/part_5.png)
+
+更多配置请参考[palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)
+
+### 6.自定义样式
+
+可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的文件夹下，创建index.styl的文件：
+
+```
+  D:\blog\docs\.vuepress
+  ├─config.js
+  ├─styles
+  |   ├─index.styl
+  |   └palette.styl
+```
+
+添加样式代码：
+
+```style
+  // 处理用作强调的文字颜色在暗黑模式下看不清楚
+  .dark .content__default code {
+    background-color: rgba(58,58,92,0.7);
+    color: #fff;
+  }
+```
+
+修改后效果如下:
+
+![avatar](/image/part_6.png)
+
+### 7.添加文章信息
+
+可以看到part_1页面出现了两个标题，这是因为vuepress-theme-reco主题默认取第一个一级标题作为文章的标题，我们可以修改一下文章的信息：
+
+```
+  // 在md文件顶部添加
+  ---
+  title: CSS第一篇
+  author: chengyisan
+  date: '2023-4-18'
+  ---
+```
+
+效果如下:
+
+![avatar](/image/part_7.png)
+
+如果author作者信息不想每个文档都写，也可以在config.js中添加，后续在config.js配置中统一添加。
+
+也可以在index.styl设置隐藏文章信息
+
+```style
+  .page .page-title {
+    display: none;
+  }
+```
+
+### 8.config.js配置
+
+上面我们提示作者信息可以在config.js中统一配置：
+
+```js
+  module.exports = {
+    ...
+    themeConfig: {
+      author: "chengyisan",
+      nav: [...],
+      sidebar: [...]
+    },
+    theme: "reco"
+  }
+```
+
+同时我们看到文章中的时间显示格式4/18/2023和我们书写的格式2023-4-18是不一致，这是因为Vuepress的默认语言是en-us，只需设置一下语言即可，设置后显示就变成了2023/4/18：
+
+```js
+  module.exports = {
+    ...
+    locales: {
+      "/": {
+        lang: "zh-CN",
+      },
+    },
+    themeConfig: {
+      author: "chengyisan",
+      nav: [...],
+      sidebar: [...]
+    },
+    theme: "reco"
+  }
+```
+
+没有使用vuepress-theme-reco之前文章的多级标题会展示在左侧导航栏，但是vuepress-theme-reco会默认移除这些标题，同时在右侧显示子侧边栏，需要的话可以全局开启：
+
+```js
+  module.exports = {
+    ...
+    locales: {
+      "/": {
+        lang: "zh-CN",
+      },
+    },
+    themeConfig: {
+      author: "chengyisan",
+      nav: [...],
+      sidebar: [...],
+      subSidebar: "auto", // 二级标题会在右侧生成导航栏
+    },
+    theme: "reco"
+  }
+```
+
+| 未使用主题 | 使用主题不开启子侧边栏 | 使用主题开启子侧边栏 |
+| :------: | :------: | :------: |
+| ![avatar](/image/part_8.png) | ![avatar](/image/part_9.png) | ![avatar](/image/part_10.png) |
+
+至此一个网页的基础升级版也搭建完成了。
