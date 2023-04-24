@@ -29,7 +29,7 @@ date: '2023-4-18'
   npm init
 ```
 
-途中一路回车即可，得到一个只有package.json的blog文件夹：
+途中一路回车即可，得到一个只有 `package.json` 的blog文件夹：
 
 ```
   D:\blog
@@ -57,7 +57,7 @@ date: '2023-4-18'
   npm install vuePress -d
 ```
 
-创建第一篇文章，先创建一个docs文件夹，以及一个README.md文件。该文件类似于vue项目下的index.vue页面。并写入hello World为文章内容：
+创建第一篇文章，先创建一个docs文件夹，以及一个 `README.md` 文件。该文件类似于vue项目下的 `index.vue` 页面。并写入hello World为文章内容：
 
 ```md
   // 此时是在blog文件夹内
@@ -65,7 +65,7 @@ date: '2023-4-18'
   echo '# Hello World' > docs/README.md
 ```
 
-同时在package.json文件中添加启动命令：
+同时在 `package.json` 文件中添加启动命令：
 
 ```json
   {
@@ -100,7 +100,7 @@ date: '2023-4-18'
 
 ## 基础配置
 
-创建一个.vuepress的文件夹，存放所有配置相关的文件，以及一个config.js文件，此时的目录结构如下：
+创建一个.vuepress的文件夹，存放所有配置相关的文件，以及一个 `config.js` 文件，此时的目录结构如下：
 
 ```
   D:\blog
@@ -114,7 +114,7 @@ date: '2023-4-18'
 
 ### 1.添加标题和描述
 
-为了SEO，在config.js添加：
+为了SEO，在 `config.js` 添加：
 
 ```js
   module.exports = {
@@ -129,7 +129,7 @@ date: '2023-4-18'
 
 ### 2.添加导航栏
 
-在右上角添加导航，修改config.js：
+在右上角添加导航，修改 `config.js` ：
 
 ```js
   module.exports = {
@@ -207,13 +207,13 @@ date: '2023-4-18'
 
 ### 4.添加主题
 
-基本功能已经实现，但是要实现loading，切换等效果这些还不够，引入主题帮助实现高级功能，这里推荐使用vuepress-theme-reco：
+基本功能已经实现，但是要实现loading，切换等效果这些还不够，引入主题帮助实现高级功能，这里推荐使用 `vuepress-theme-reco` ：
 
 ```
   npm install vuepress-theme-reco --save -dev
 ```
 
-同时在congfig.js中引用主题
+同时在 `config.js` 中引用主题
 
 ```js
   module.exports = {
@@ -234,7 +234,7 @@ date: '2023-4-18'
 
 ### 5.修改主题色
 
-Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文件夹创建styles文件夹以及palette.styl文件：
+VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文件夹创建styles文件夹以及 `palette.styl` 文件：
 
 ```
   D:\blog\docs\.vuepress
@@ -257,7 +257,7 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ### 6.自定义样式
 
-可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的文件夹下，创建index.styl的文件：
+可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的文件夹下，创建 `index.styl` 的文件：
 
 ```
   D:\blog\docs\.vuepress
@@ -283,7 +283,7 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ### 7.添加文章信息
 
-可以看到part_1页面出现了两个标题，这是因为vuepress-theme-reco主题默认取第一个一级标题作为文章的标题，我们可以修改一下文章的信息：
+可以看到part_1页面出现了两个标题，这是因为 `vuepress-theme-reco` 主题默认取第一个一级标题作为文章的标题，我们可以修改一下文章的信息：
 
 ```
   // 在md文件顶部添加
@@ -298,7 +298,7 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ![avatar](/image/part_7.png)
 
-如果author作者信息不想每个文档都写，也可以在config.js中添加，后续在config.js配置中统一添加。
+如果author作者信息不想每个文档都写，也可以在 `config.js` 中添加，后续在 `config.js` 配置中统一添加。
 
 也可以在index.styl设置隐藏文章信息
 
@@ -310,7 +310,7 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ### 8.config.js配置
 
-上面我们提示作者信息可以在config.js中统一配置：
+上面我们提示作者信息可以在 `config.js` 中统一配置：
 
 ```js
   module.exports = {
@@ -324,7 +324,7 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   }
 ```
 
-同时我们看到文章中的时间显示格式4/18/2023和我们书写的格式2023-4-18是不一致，这是因为Vuepress的默认语言是en-us，只需设置一下语言即可，设置后显示就变成了2023/4/18：
+同时我们看到文章中的时间显示格式4/18/2023和我们书写的格式2023-4-18是不一致，这是因为VuePress的默认语言是en-us，只需设置一下语言即可，设置后显示就变成了2023/4/18：
 
 ```js
   module.exports = {
@@ -368,3 +368,106 @@ Vuepress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 | ![avatar](/image/part_8.png) | ![avatar](/image/part_9.png) | ![avatar](/image/part_10.png) |
 
 至此一个网页的基础升级版也搭建完成了。
+
+## Github.io部署
+
+首先在Github上新建一个仓库，这里取名blogs：
+
+![avatar](/image/part_11.png)
+
+同时在 `config.js` 里面增加一个base路径的配置：
+
+```js
+  module.exports = {
+    ...
+    // 和仓库名保持一致
+    base: "/blogs/",
+    themeConfig: {...},
+    ...
+  }
+```
+
+截至目前的 `config.js` 配置：
+
+```js
+  module.exports = {
+    title: "XXX的网页",
+    description: "菜鸟的尝试",
+    base: "/blogs/",
+    locales: {
+      "/": {
+        lang: "zh-CN",
+      },
+    },
+    themeConfig: {
+      author: "chengyisan",
+      nav: [
+        { text: "首页", link: "/" },
+        {
+          text: "关于我",
+          // 这里是下拉列表展现形式
+          items: [
+            { text: "掘金", link: "https://juejin.cn/user/1121946905352599" },
+            { text: "Github", link: "https://github.com/Pine-Nuts" },
+          ],
+        },
+      ],
+      sidebar: [
+        // 单侧边栏
+        {
+          title: "欢迎光临",
+          path: "/", // 点击父级节点是否跳转
+          collapsable: true, // 是否折叠
+          children: [{ title: "开心一下", path: "/" }],
+        },
+        {
+          title: "CSS",
+          // path: "/CSS_PART/part_1", // 不跳转
+          collapsable: false, // 是否折叠
+          children: [
+            { title: "part1", path: "/CSS_PART/part_1" },
+            { title: "part2", path: "/CSS_PART/part_2" },
+          ],
+        },
+      ],
+      subSidebar: "auto", // 二级标题会在右侧生成导航栏
+    },
+    theme: "reco",
+  };
+```
+
+然后在blog文件夹下建立 `deploy.sh` 文件：
+
+```
+  #!/usr/bin/env sh
+
+  # 确保脚本抛出遇到的错误
+  set -e
+
+  # 生成静态文件
+  npm run docs:build
+
+  # 进入生成的文件夹
+  cd docs/.vuepress/dist
+
+  git init
+  git add -A
+  git commit -m 'deploy'
+
+  # 如果发布到 https://<USERNAME>.github.io/<REPO>
+  git push -f git@github.com:chengyisan/blogs.git master:gh-pages
+
+  cd -
+```
+
+新建终端，此处以vscode为例，执行sh deploy.sh，项目就会开始构建，并最终推送到gh-pages分支：
+
+![avatar](/image/part_12.png)
+
+最终我们可以在仓库的 Settings -> Pages 中看到最后的地址。
+
+![avatar](/image/part_13.png)
+
+最后生成的地址：<https://chengyisan.github.io/blogs/>
+
+至此，我们完成了 VuePress 和 Github Pages 的部署。
