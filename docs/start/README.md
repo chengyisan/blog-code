@@ -371,7 +371,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ## Github.io部署
 
-首先在Github上新建一个仓库，这里取名blogs：
+首先在Github上新建一个仓库，这里取名blog：
 
 ![avatar](/image/part_11.png)
 
@@ -381,7 +381,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   module.exports = {
     ...
     // 和仓库名保持一致
-    base: "/blogs/",
+    base: "/blog/",
     themeConfig: {...},
     ...
   }
@@ -393,7 +393,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   module.exports = {
     title: "XXX的网页",
     description: "菜鸟的尝试",
-    base: "/blogs/",
+    base: "/blog/",
     locales: {
       "/": {
         lang: "zh-CN",
@@ -455,7 +455,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   git commit -m 'deploy'
 
   # 如果发布到 https://<USERNAME>.github.io/<REPO>
-  git push -f git@github.com:chengyisan/blogs.git master:gh-pages
+  git push -f git@github.com:chengyisan/blog.git master:gh-pages
 
   cd -
 ```
@@ -468,6 +468,10 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ![avatar](/image/part_13.png)
 
-最后生成的地址：<https://chengyisan.github.io/blogs/>
+最后生成的地址：<https://chengyisan.github.io/blog/>
 
 至此，我们完成了 VuePress 和 Github Pages 的部署。
+
+## 一些补充
+
+### 1.全局组件的引用
