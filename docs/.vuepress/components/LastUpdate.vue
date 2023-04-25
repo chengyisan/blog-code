@@ -4,7 +4,7 @@
 export default {
   props: ['slot-key'],
   mounted() {
-    this.$page.lastUpdated = '2022/02/02 下午2:00:00'
+    this.$page.lastUpdated = '2023/04/12 下午2:00:00'
   }
 }
 </script>

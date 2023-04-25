@@ -50,7 +50,7 @@ module.exports = {
           collapsable: false,
           children: [
             { title: "介绍", path: "/blogs/" },
-            { title: "CSS", path: "/blogs/css/1" },
+            { title: "CSS", path: "/blogs/css/" },
             { title: "JavaScript", path: "/blogs/js/1" },
             { title: "Vue", path: "/blogs/vue/1" },
           ],
