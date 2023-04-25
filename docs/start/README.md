@@ -365,9 +365,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 | 未使用主题 | 使用主题不开启子侧边栏 | 使用主题开启子侧边栏 |
 | :------: | :------: | :------: |
-| <img :src="$withBase('/image/part_8.png')" alt="avatar"> |
-<img :src="$withBase('/image/part_9.png')" alt="avatar"> |
-<img :src="$withBase('/image/part_10.png')" alt="avatar"> |
+| <img :src="$withBase('/image/part_8.png')" alt="avatar"> | <img :src="$withBase('/image/part_9.png')" alt="avatar"> | <img :src="$withBase('/image/part_10.png')" alt="avatar"> |
 
 至此一个网页的基础升级版也搭建完成了。
 
