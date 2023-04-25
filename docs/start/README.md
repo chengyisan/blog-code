@@ -60,7 +60,7 @@ date: '2023-4-18'
 创建第一篇文章，先创建一个docs文件夹，以及一个 `README.md` 文件。该文件类似于vue项目下的 `index.vue` 页面。并写入hello World为文章内容：
 
 ```md
-  // 此时是在blog文件夹内
+  // 此时是在blog目录下
   mkdir docs
   echo '# Hello World' > docs/README.md
 ```
@@ -234,7 +234,7 @@ date: '2023-4-18'
 
 ### 5.修改主题色
 
-VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文件夹创建styles文件夹以及 `palette.styl` 文件：
+VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目录下创建styles文件夹以及 `palette.styl` 文件：
 
 ```md
   D:\blog\docs\.vuepress
@@ -257,7 +257,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ### 6.自定义样式
 
-可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的文件夹下，创建 `index.styl` 的文件：
+可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的目录下，创建 `index.styl` 的文件：
 
 ```md
   D:\blog\docs\.vuepress
@@ -438,7 +438,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   };
 ```
 
-然后在blog文件夹下建立 `deploy.sh` 文件：
+然后在blog目录下建立 `deploy.sh` 文件：
 
 ```md
   #!/usr/bin/env sh
@@ -462,7 +462,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
   cd -
 ```
 
-新建终端，此处以vscode为例，执行sh deploy.sh，项目就会开始构建，并最终推送到gh-pages分支：
+新建终端，此处以vscode为例，执行 `sh deploy.sh`，项目就会开始构建，并最终推送到 `gh-pages` 分支：
 
 <img :src="$withBase('/image/part_12.png')" alt="avatar">
 
@@ -477,3 +477,91 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 ## 一些补充
 
 ### 1.组件的引用
+
+因为VuePress会自动识别 `components` 文件夹内的所有组件并自动注册，我们在对应的页面直接使用即可。举个例子：
+
+```md
+  D:\blog\docs\.vuepress
+  ├─config.js
+  ├─styles
+  |   ├─index.styl
+  |   └palette.styl
+  ├─components
+  |     └demo.vue
+```
+
+内容就写hello css：
+
+```md
+  // demo.vue
+  <template>
+    <div class="demo">
+      hello css
+    </div>
+  </template>
+```
+
+在 `part_2.md` 中亦如在vue文件中直接引用组件名称：
+
+```md
+  // part_2.md
+  <demo />
+```
+
+<img :src="$withBase('/image/part_14.png')" alt="avatar">
+
+### 2.自定义主题
+
+除了使用vuepress-theme-reco作为主题，我们还可以使用自定义的主题进行页面展示，例如 `elementUI`，在.vuepress目录下添加 `enhanceAPP.js` 文件：
+
+```md
+  D:\blog\docs\.vuepress
+  ├─.vuepress
+  |     ├─config.js
+  |     ├─enhanceApp.js
+  |     ├─styles
+  |     |   ├─index.styl
+  |     |   └palette.styl
+  |     ├─components
+  |     |     └demo.vue
+```
+
+```js
+  // enhanceAPP.js
+  import Vue from 'vue'
+  import ElementUI from 'element-ui'
+  import 'element-ui/lib/theme-chalk/index.css'
+  export default ({
+    Vue,
+    options,
+    router
+  }) => {
+    Vue.use(ElementUI)
+  }
+```
+
+在VuePress中应该就可以使用 `elementUI` 里边的组件了。可是启动项目后发现页面白屏且控制台会报这样的错误，`Cannot find module 'core-js/library/fn/xxx/xxx'`：
+
+<img :src="$withBase('/image/problem_5.png')" alt="avatar">
+
+经过查询发现原因应该是UI组件中依赖的core-js包和VuePress所依赖的core-js包版本不兼容造成的。大佬附带了解决方案，需要在配置文件 `config.js` 中进行如下配置：
+
+```js
+module.exports = {
+  ...
+  theme: "reco",
+  chainWebpack: config => {
+    config.resolve.alias.set('core-js/library/fn', 'core-js/features')
+  }
+};
+```
+
+在 `part_2.md` 中添加一个按钮
+
+```md
+  // part_2.md
+  <demo />
+  <el-button type="primary">出发</el-button>
+```
+
+<img :src="$withBase('/image/part_15.png')" alt="avatar">
