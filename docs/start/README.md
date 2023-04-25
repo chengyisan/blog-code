@@ -31,7 +31,7 @@ date: '2023-4-18'
 
 途中一路回车即可，得到一个只有 `package.json` 的blog文件夹：
 
-```
+```md
   D:\blog
   ├─package.json
 ```
@@ -90,19 +90,19 @@ date: '2023-4-18'
 
 | 正确的展示 | 乱码的展示 |
 | :------: | :------: |
-| ![avatar](/image/problem_1.png) | ![avatar](/image/problem_2.png) |
+| <img :src="$withBase('/image/problem_1.png')" alt="avatar"> | <img :src="$withBase('/image/problem_2.png')" alt="avatar"> |
 
 原因是md文件编码格式错误
 
 | 正确的格式 | 引起乱码的格式 |
 | :------: | :------: |
-| ![avatar](/image/problem_3.png) | ![avatar](/image/problem_4.png) |
+| <img :src="$withBase('/image/problem_3.png')" alt="avatar"> | <img :src="$withBase('/image/problem_4.png') |
 
 ## 基础配置
 
 创建一个.vuepress的文件夹，存放所有配置相关的文件，以及一个 `config.js` 文件，此时的目录结构如下：
 
-```
+```md
   D:\blog
   ├─package-lock.json
   ├─package.json
@@ -125,7 +125,7 @@ date: '2023-4-18'
 
 此时的页面：
 
-![avatar](/image/part_1.png)
+<img :src="$withBase('/image/part_1.png')" alt="avatar">
 
 ### 2.添加导航栏
 
@@ -153,7 +153,7 @@ date: '2023-4-18'
 
 此时的效果：
 
-![avatar](/image/part_2.png)
+<img :src="$withBase('/image/part_2.png')" alt="avatar">
 
 更多配置请参考[导航栏配置](https://vuepress.vuejs.org/zh/theme/default-theme-config.html#%E5%AF%BC%E8%88%AA%E6%A0%8F)
 
@@ -161,7 +161,7 @@ date: '2023-4-18'
 
 在添加侧边栏之前，先添加一些md文件：
 
-```
+```md
   D:\blog\docs
   ├─README.md
   ├─CSS_PART
@@ -201,7 +201,7 @@ date: '2023-4-18'
 
 对应效果如下：
 
-![avatar](/image/part_3.png)
+<img :src="$withBase('/image/part_3.png')" alt="avatar">
 
 至此一个网页的基本形态也就搭建完成了。
 
@@ -209,7 +209,7 @@ date: '2023-4-18'
 
 基本功能已经实现，但是要实现loading，切换等效果这些还不够，引入主题帮助实现高级功能，这里推荐使用 `vuepress-theme-reco` ：
 
-```
+```md
   npm install vuepress-theme-reco --save -dev
 ```
 
@@ -228,7 +228,7 @@ date: '2023-4-18'
 
 对应效果如下：
 
-![avatar](/image/part_4.png)
+<img :src="$withBase('/image/part_4.png')" alt="avatar">
 
 点击画板，可以切换模式，具体自行体验。
 
@@ -236,7 +236,7 @@ date: '2023-4-18'
 
 VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文件夹创建styles文件夹以及 `palette.styl` 文件：
 
-```
+```md
   D:\blog\docs\.vuepress
   ├─config.js
   ├─styles
@@ -251,7 +251,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 效果如下:
 
-![avatar](/image/part_5.png)
+<img :src="$withBase('/image/part_5.png')" alt="avatar">
 
 更多配置请参考[palette.styl](https://vuepress.vuejs.org/zh/config/#palette-styl)
 
@@ -259,7 +259,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 可以看到刚刚黑夜模式下，用于强调作用的文件，显示不清晰，可以通过修改样式进行调整。在刚刚styles的文件夹下，创建 `index.styl` 的文件：
 
-```
+```md
   D:\blog\docs\.vuepress
   ├─config.js
   ├─styles
@@ -279,13 +279,13 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 修改后效果如下:
 
-![avatar](/image/part_6.png)
+<img :src="$withBase('/image/part_6.png')" alt="avatar">
 
 ### 7.添加文章信息
 
 可以看到part_1页面出现了两个标题，这是因为 `vuepress-theme-reco` 主题默认取第一个一级标题作为文章的标题，我们可以修改一下文章的信息：
 
-```
+```md
   // 在md文件顶部添加
   ---
   title: CSS第一篇
@@ -296,7 +296,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 效果如下:
 
-![avatar](/image/part_7.png)
+<img :src="$withBase('/image/part_7.png')" alt="avatar">
 
 如果author作者信息不想每个文档都写，也可以在 `config.js` 中添加，后续在 `config.js` 配置中统一添加。
 
@@ -365,7 +365,9 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 | 未使用主题 | 使用主题不开启子侧边栏 | 使用主题开启子侧边栏 |
 | :------: | :------: | :------: |
-| ![avatar](/image/part_8.png) | ![avatar](/image/part_9.png) | ![avatar](/image/part_10.png) |
+| <img :src="$withBase('/image/part_8.png')" alt="avatar"> |
+<img :src="$withBase('/image/part_9.png')" alt="avatar"> |
+<img :src="$withBase('/image/part_10.png')" alt="avatar"> |
 
 至此一个网页的基础升级版也搭建完成了。
 
@@ -373,7 +375,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 首先在Github上新建一个仓库，这里取名blog：
 
-![avatar](/image/part_11.png)
+<img :src="$withBase('/image/part_11.png')" alt="avatar">
 
 同时在 `config.js` 里面增加一个base路径的配置：
 
@@ -438,7 +440,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 然后在blog文件夹下建立 `deploy.sh` 文件：
 
-```
+```md
   #!/usr/bin/env sh
 
   # 确保脚本抛出遇到的错误
@@ -462,11 +464,11 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 新建终端，此处以vscode为例，执行sh deploy.sh，项目就会开始构建，并最终推送到gh-pages分支：
 
-![avatar](/image/part_12.png)
+<img :src="$withBase('/image/part_12.png')" alt="avatar">
 
 最终我们可以在仓库的 Settings -> Pages 中看到最后的地址。
 
-![avatar](/image/part_13.png)
+<img :src="$withBase('/image/part_13.png')" alt="avatar">
 
 最后生成的地址：<https://chengyisan.github.io/blog/>
 
@@ -474,4 +476,4 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress文
 
 ## 一些补充
 
-### 1.全局组件的引用
+### 1.组件的引用

@@ -2,7 +2,7 @@ const moment = require("moment");
 
 module.exports = {
   title: "乘以三的尝试",
-  description: "菜鸟的尝试",
+  description: "乘以三的个人网站",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
@@ -102,8 +102,8 @@ module.exports = {
           {
             name: "Married Life",
             artist: "UP",
-            url: "/bgm/Married Life.mp3",
-            cover: "/bgm/UP.jpg",
+            url: "/blog/bgm/Married Life.mp3",
+            cover: "/blog/bgm/UP.jpg",
           },
         ],
         // 是否默认缩小
