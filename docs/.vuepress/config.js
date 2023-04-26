@@ -16,8 +16,6 @@ module.exports = {
   themeConfig: {
     author: "chengyisan",
     logo: "/logo.png",
-    // authorAvatar: '/avatar.png',
-    // type: 'blog',
     type: "BlogHome",
     lastUpdated: "上次更新",
     nav: [
@@ -68,6 +66,8 @@ module.exports = {
     //     ]
     //   }
     // ],
+    // authorAvatar: '/avatar.png',
+    // type: 'blog',
     // blogConfig: {
     //   category: {
     //     location: 2,

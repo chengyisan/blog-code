@@ -476,7 +476,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 ### 1.组件的引用
 
-因为VuePress会自动识别 `components` 文件夹内的所有组件并自动注册，我们在对应的页面直接使用即可。举个例子：
+因为VuePress会自动识别 `components` 文件夹内的所有组件并自动注册，我们在对应的页面直接使用即可。举个例子，在 `components`目录下创建 `demo.vue` 文件：
 
 ```md
   D:\blog\docs\.vuepress
@@ -490,7 +490,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 内容就写hello css：
 
-```md
+```vue
   // demo.vue
   <template>
     <div class="demo">
@@ -563,3 +563,205 @@ module.exports = {
 ```
 
 <img :src="$withBase('/image/part_15.png')" alt="avatar">
+
+### 3.引入less
+
+既然引入了 `elementUI` ,那就可以引入less进行样式修改了，安装依赖：
+
+```md
+  npm i -D less-loader less
+```
+
+发现启动直接报错：
+
+<img :src="$withBase('/image/problem_7.png')" alt="avatar">
+
+解决方法：
+3-1.less-loader版本过高，建议卸载，重新安装 `less-loader@7.3.0`；
+3-2.将项目的 `node_modules` 和 `package-lock.json` 删除，执行命令：`npm cache clean --force`，然后重新 `npm install` 即可。
+
+修改组件 `demo.vue` ：
+
+```vue
+  // demo.vue
+  <template>
+    <div class="demo">
+      hello css
+    </div>
+  </template>
+  <style lang="less" scoped>
+  .demo {
+    background: #0093dd;
+  }
+  </style>
+```
+
+<img :src="$withBase('/image/part_16.png')" alt="avatar">
+
+### 4.首页配置
+
+首先vuepress-theme-reco给我们提供了一套blog形式的主题，只需修改 `config.js` 即可，同时在.vuepress目录下创建 `public` 文件夹，用于存放静态资源，这里存放一张图片，作为头像：
+
+```md
+  D:\blog\docs\.vuepress
+  ├─config.js
+  ├─enhanceApp.js
+  ├─styles
+  |   ├─index.styl
+  |   └palette.styl
+  ├─public
+  |   └avatar.png
+  ├─components
+  |     └demo.vue
+```
+
+```js
+module.exports = {
+  ...
+  themeConfig: {
+    author: "chengyisan",
+    authorAvatar: '/avatar.png',
+    type: 'blog'
+    ...
+  }
+  ...
+};
+```
+
+同时修改 `docs/README.md` 文件：
+
+```md
+  ---
+  home: true
+  ---
+  <!-- # Hello World -->
+```
+
+重启服务，就可以看到如下效果，页面中的文字默认会采用 `config.js` 中的 `title` 和 `description`：
+
+<img :src="$withBase('/image/part_17.png')" alt="avatar">
+
+滚动滚动条之后的效果：
+
+<img :src="$withBase('/image/part_18.png')" alt="avatar">
+
+继续修改 `docs/README.md` 文件：
+
+```md
+  ---
+  home: true
+  heroImage: "/avatar.png"
+  heroText: chengyisan
+  heroImageStyle:
+    {
+      maxHeight: "288px",
+      display: block,
+      borderRadius: "19% 81% 23% 77% / 44% 57% 43% 56%",
+      boxShadow: "0 15px 18px rgba(0,0,0,0.2)",
+    }
+  ---
+```
+
+最后的效果：
+
+<img :src="$withBase('/image/part_19.png')" alt="avatar">
+
+更多配置参考[首页配置](https://vuepress-theme-reco.recoluan.com/views/1.x/home.html)
+
+既然引入了less，我们就可以改造一下我们的首页了。比如通过使用自定义组件来展示，首页在 `.vuepress/components` 目录下创建 `BlogHome.vue` 文件：
+
+```md
+  D:\blog\docs\.vuepress
+  ├─config.js
+  ├─enhanceApp.js
+  ├─styles
+  |   ├─index.styl
+  |   └palette.styl
+  ├─public
+  |   └avatar.png
+  ├─components
+  |     ├─BlogHome.vue
+  |     └demo.vue
+```
+
+简单写一些内容：
+
+```vue
+  // BlogHome.vue
+  <template>
+    <div class="home-container">
+      <img :src="imageSrc" alt="" srcset="">
+    </div>
+  </template>
+
+  <script>
+  export default {
+    name: 'BlogHome',
+    data () {
+      return {
+        pcImageSrc: '/home/home-background-pc.jpg',
+        mobileImageSrc: '/home/home-background-mobile.jpg',
+        deviceType: null,
+      }
+    },
+    computed: {
+      imageSrc() {
+        return this.deviceType === 'pc' ? this.$withBase(this.pcImageSrc) : this.$withBase(this.mobileImageSrc)
+      }
+    },
+    mounted() {
+      this.detectDeviceType();
+      window.addEventListener('resize', () => {
+        this.detectDeviceType();
+      })
+    },
+    methods: {
+      detectDeviceType() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          this.deviceType = 'mobile';
+        } else {
+          this.deviceType = 'pc';
+        }
+      },
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize', () => {
+        this.detectDeviceType();
+      });
+    },
+  }
+  </script>
+
+  <style lang="less" scoped>
+  .home-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    img {
+      // 3.6rem头部高度
+      margin-top: 3.6rem;
+      width: 100%;
+      max-width: 965px;
+    }
+  }
+  </style>
+```
+
+修改 `config.js` 文件，将刚刚上述添加的 `authorAvatar` 属性注释，同时将 `type` 改完组件名称  `BlogHome`：
+
+```js
+module.exports = {
+  ...
+  themeConfig: {
+    author: "chengyisan",
+    // authorAvatar: '/avatar.png',
+    type: 'BlogHome'
+    ...
+  }
+  ...
+};
+```
+
+重启服务，就可以看到如下效果：
+
+<img :src="$withBase('/image/part_20.png')" alt="avatar">
