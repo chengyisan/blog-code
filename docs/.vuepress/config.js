@@ -137,5 +137,5 @@ module.exports = {
     [
       "vuepress-plugin-nprogress", // 切换页面加载滚动条
     ],
-  ],
+  ]
 };
