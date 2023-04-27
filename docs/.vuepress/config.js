@@ -21,7 +21,23 @@ module.exports = {
     nav: [
       { text: "首页", link: "/" },
       { text: "搭建", link: "/start/" },
-      { text: "文档", link: "/blogs/" },
+      { text: "文档",
+        // link: "/blogs/",
+        items: [
+          {
+            text: "CSS",
+            link: "/blogs/CSS/",
+          },
+          {
+            text: "JavaScript",
+            link: "/blogs/JS/",
+          },
+          {
+            text: "VUE",
+            link: "/blogs/Vue/",
+          },
+        ]
+      },
       {
         text: "关于我",
         // 这里是下拉列表展现形式
@@ -42,17 +58,16 @@ module.exports = {
     subSidebar: "auto", // 二级标题会在右侧生成导航栏
     sidebar: {
       // 多侧边栏
-      "/blogs/": [
-        {
-          title: "基础",
-          collapsable: false,
-          children: [
-            { title: "介绍", path: "/blogs/" },
-            { title: "CSS", path: "/blogs/css/" },
-            { title: "JavaScript", path: "/blogs/js/1" },
-            { title: "Vue", path: "/blogs/vue/1" },
-          ],
-        },
+      "/blogs/CSS/": [
+        { title: "介绍", path: "/blogs/CSS/" },
+        { title: "CSS布局", path: "/blogs/CSS/CSS_layout" },
+        { title: "Flex布局", path: "/blogs/CSS/Flex_layout" }
+      ],
+      "/blogs/JS/": [
+        { title: "介绍", path: "/blogs/JS/" },
+      ],
+      "/blogs/Vue/": [
+        { title: "介绍", path: "/blogs/Vue/" },
       ],
     },
     // sidebar: [ // 单侧边栏
