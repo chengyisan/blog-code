@@ -10,7 +10,7 @@ publish: false
 
 一切ok，大驾光临，请随意访问。
 
-<style>
+<style scoped>
 .page .page-title {
   display: none;
 }

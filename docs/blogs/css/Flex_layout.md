@@ -2,6 +2,7 @@
 title: Flex布局
 date: '2023-4-27'
 ---
+
 <!-- # Flex布局 -->
 
 flex 是 Flexible Box 的缩写，意为"弹性布局"。指定容器display: flex即可。容器有以下属性：flex-direction，flex-wrap，flex-flow，justify-content，align-items，align-content。
