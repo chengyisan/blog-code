@@ -65,6 +65,7 @@ module.exports = {
       ],
       "/blogs/JS/": [
         { title: "介绍", path: "/blogs/JS/" },
+        { title: "JavaScript基础", path: "/blogs/JS/Base" },
       ],
       "/blogs/Vue/": [
         { title: "介绍", path: "/blogs/Vue/" },
@@ -113,7 +114,7 @@ module.exports = {
       "@vuepress-reco/vuepress-plugin-bgm-player", // 音乐播放器
       {
         audios: [
-          // 本地文件示例 github.io读取本地音频报错
+          // 本地文件示例
           {
             name: "Married Life",
             artist: "UP",
