@@ -61,7 +61,8 @@ module.exports = {
       "/blogs/CSS/": [
         { title: "介绍", path: "/blogs/CSS/" },
         { title: "CSS布局", path: "/blogs/CSS/CSS_layout" },
-        { title: "Flex布局", path: "/blogs/CSS/Flex_layout" }
+        { title: "Flex布局", path: "/blogs/CSS/Flex_layout" },
+        { title: "一些CSS", path: "/blogs/CSS/CSS_code" }
       ],
       "/blogs/JS/": [
         { title: "介绍", path: "/blogs/JS/" },

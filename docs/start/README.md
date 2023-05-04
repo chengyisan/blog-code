@@ -5,7 +5,7 @@ date: '2023-4-18'
 
 # 前言
 
-:::tip
+::: tip 提示
 某日网上冲浪心血来潮想搭建一个博客，最初只是想记录面试过程中遇到的问题和理解，以及平时学习过程中的笔记。
 在网上参照[冴羽github](https://github.com/mqyqingfeng/Blog)/[冴羽知乎](https://zhuanlan.zhihu.com/p/489776067)的教程，
 搭建了该平台，在此感谢大佬的指点。
