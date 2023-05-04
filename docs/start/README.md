@@ -21,7 +21,7 @@ date: '2023-4-18'
 
 首先创建并进入一个文件夹，并进行初始化：
 
-```md
+```bash
   // 取一个你喜欢的名字
   mkdir blog
   cd blog
@@ -53,13 +53,13 @@ date: '2023-4-18'
 
 安装VuePress：
 
-```md
+```bash
   npm install vuePress -d
 ```
 
 创建第一篇文章，先创建一个docs文件夹，以及一个 `README.md` 文件。该文件类似于vue项目下的 `index.vue` 页面。并写入hello World为文章内容：
 
-```md
+```bash
   // 此时是在blog目录下
   mkdir docs
   echo '# Hello World' > docs/README.md
@@ -78,7 +78,7 @@ date: '2023-4-18'
 
 至此框架已初步完成，启动程序：
 
-```md
+```bash
   npm run docs:dev
 ```
 
@@ -209,7 +209,7 @@ date: '2023-4-18'
 
 基本功能已经实现，但是要实现loading，切换等效果这些还不够，引入主题帮助实现高级功能，这里推荐使用 `vuepress-theme-reco` ：
 
-```md
+```bash
   npm install vuepress-theme-reco --save -dev
 ```
 
@@ -245,7 +245,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 设置主题色：
 
-```style
+```css
   $accentColor = #0093dd // 主题颜色
 ```
 
@@ -269,7 +269,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 添加样式代码：
 
-```style
+```css
   // 处理用作强调的文字颜色在暗黑模式下看不清楚
   .dark .content__default code {
     background-color: rgba(58,58,92,0.7);
@@ -302,7 +302,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 也可以在index.styl设置隐藏文章信息
 
-```style
+```css
   .page .page-title {
     display: none;
   }
@@ -438,7 +438,7 @@ VuePress默认是绿色，可以修改成自己喜欢的颜色。在.vuepress目
 
 然后在blog目录下建立 `deploy.sh` 文件：
 
-```md
+```bash
   #!/usr/bin/env sh
 
   # 确保脚本抛出遇到的错误
@@ -568,7 +568,7 @@ module.exports = {
 
 既然引入了 `elementUI` ,那就可以引入less进行样式修改了，安装依赖：
 
-```md
+```bash
   npm i -D less-loader less
 ```
 
