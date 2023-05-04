@@ -7,7 +7,7 @@ module.exports = {
     ["link", { rel: "icon", href: "/favicon.ico" }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
   base: "/blog/",
-  theme: "reco",
+  // theme: "reco",
   locales: {
     "/": {
       lang: "zh-CN",
@@ -16,7 +16,7 @@ module.exports = {
   themeConfig: {
     author: "chengyisan",
     logo: "/logo.png",
-    type: "BlogHome",
+    // type: "BlogHome",
     lastUpdated: "上次更新",
     nav: [
       { text: "首页", link: "/" },
@@ -108,7 +108,7 @@ module.exports = {
       },
     ],
     [
-      "@vuepress-reco/vuepress-plugin-back-to-top", //返回顶部
+      '@vuepress/back-to-top' //返回顶部
     ],
     [
       "@vuepress-reco/vuepress-plugin-bgm-player", // 音乐播放器
@@ -131,16 +131,6 @@ module.exports = {
       },
     ],
     [
-      "@vuepress-reco/vuepress-plugin-kan-ban-niang", // 看板娘
-      {
-        theme: ["blackCat"],
-        messages: {
-          home: "Carl&Ellie",
-          close: "返回喵星",
-        },
-      },
-    ],
-    [
       "copyright", // 复制增加著作权信息
       {
         authorName: "乘以三", // 选中的文字将无法被复制
@@ -148,10 +138,10 @@ module.exports = {
       },
     ],
     [
-      "vuepress-plugin-code-copy", // 代码复制
+      "vuepress-plugin-code-copy" // 代码复制
     ],
     [
-      "vuepress-plugin-nprogress", // 切换页面加载滚动条
+      "vuepress-plugin-nprogress" // 切换页面加载滚动条
     ],
   ]
 };
