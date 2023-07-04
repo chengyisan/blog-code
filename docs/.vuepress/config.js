@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 module.exports = {
-  title: "乘以三的尝试",
+  title: "乘以三",
   description: "乘以三的个人网站",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }], // 增加一个自定义的 favicon(网页标签的图标)
@@ -62,6 +62,7 @@ module.exports = {
         { title: "介绍", path: "/blogs/CSS/" },
         { title: "CSS布局", path: "/blogs/CSS/CSS_layout" },
         { title: "Flex布局", path: "/blogs/CSS/Flex_layout" },
+        { title: "CSS面试题", path: "/blogs/CSS/CSS_interview" },
         { title: "一些CSS", path: "/blogs/CSS/CSS_code" }
       ],
       "/blogs/JS/": [
@@ -70,6 +71,7 @@ module.exports = {
       ],
       "/blogs/Vue/": [
         { title: "介绍", path: "/blogs/Vue/" },
+        { title: "Vue面试题", path: "/blogs/Vue/Vue_interview" },
       ],
     },
     // sidebar: [ // 单侧边栏

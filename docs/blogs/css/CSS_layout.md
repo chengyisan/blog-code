@@ -104,11 +104,11 @@ css 浮动就是浮动元素会脱离文档流，根据 float 的值向左或向
 **创建方法（包括但不限）**
 
 - 根元素或包含根元素的元素
-- 浮动元素（元素的 float 不是 none
-- 绝对定位元素（元素的 position 为 absolute 或 fixed
-- 行内块元素（元素的 display 为 inline-block
+- 浮动元素（元素的 float 不是 none）
+- 绝对定位元素（元素的 position 为 absolute 或 fixed）
+- 行内块元素（元素的 display 为 inline-block）
 - overflow 值不为 visible 的块元素
-- 弹性元素（display为 flex 或 inline-flex元素的直接子元素
+- 弹性元素（display为 flex 或 inline-flex元素的直接子元素）
 
 **规则特点**
 
