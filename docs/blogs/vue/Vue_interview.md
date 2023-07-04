@@ -174,11 +174,11 @@ Vue.component('my-component', {
 
 - Hash 模式：URL 中会包含一个 # 符号，如：`http://example.com/#/foo/bar`。在 Hash 模式下，当 URL 改变时，浏览器不会向服务器发出请求，而是只会触发 `hashchange` 事件，通过监听该事件，Vue Router 可以更新页面视图的内容。Hash 模式的优点是兼容性好，而且不需要服务器端特殊配置，缺点是 URL 看起来不那么美观，且不利于 SEO。
 
--Hash 原理：hash通过监听浏览器的`onhashchange()`事件变化，查找对应的路由规则
+- Hash 原理：hash通过监听浏览器的`onhashchange()`事件变化，查找对应的路由规则
 
 - History 模式：URL 中不包含 # 符号，如：`http://example.com/foo/bar`。在 History 模式下，当 URL 改变时，浏览器会向服务器发出请求，服务器需要配置为始终返回 index.html 页面，然后在该页面中通过 JavaScript 根据 URL 来渲染出对应的视图。History 模式的优点是 URL 看起来美观，且有利于 SEO，缺点是需要服务器端配置，且兼容性不如 Hash 模式。
 
--History 原理：用H5的 history中新增的两个API `pushState()` 和 `replaceState()` 和一个事件`onpopstate`监听URL变化
+- History 原理：用H5的 history中新增的两个API `pushState()` 和 `replaceState()` 和一个事件`onpopstate`监听URL变化
 
 ### history模式部署后刷新404报错
 
