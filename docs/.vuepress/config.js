@@ -68,6 +68,7 @@ module.exports = {
       "/blogs/JS/": [
         { title: "介绍", path: "/blogs/JS/" },
         { title: "JavaScript基础", path: "/blogs/JS/Base" },
+        { title: "JavaScript面试题", path: "/blogs/JS/JS_interview" },
       ],
       "/blogs/Vue/": [
         { title: "介绍", path: "/blogs/Vue/" },
