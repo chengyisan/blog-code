@@ -174,4 +174,53 @@ Vue.component('my-component', {
 
 - Hash 模式：URL 中会包含一个 # 符号，如：`http://example.com/#/foo/bar`。在 Hash 模式下，当 URL 改变时，浏览器不会向服务器发出请求，而是只会触发 `hashchange` 事件，通过监听该事件，Vue Router 可以更新页面视图的内容。Hash 模式的优点是兼容性好，而且不需要服务器端特殊配置，缺点是 URL 看起来不那么美观，且不利于 SEO。
 
+-Hash 原理：hash通过监听浏览器的`onhashchange()`事件变化，查找对应的路由规则
+
 - History 模式：URL 中不包含 # 符号，如：`http://example.com/foo/bar`。在 History 模式下，当 URL 改变时，浏览器会向服务器发出请求，服务器需要配置为始终返回 index.html 页面，然后在该页面中通过 JavaScript 根据 URL 来渲染出对应的视图。History 模式的优点是 URL 看起来美观，且有利于 SEO，缺点是需要服务器端配置，且兼容性不如 Hash 模式。
+
+-History 原理：用H5的 history中新增的两个API `pushState()` 和 `replaceState()` 和一个事件`onpopstate`监听URL变化
+
+### history模式部署后刷新404报错
+
+1.前端解决办法：
+
+第一步：切换history模式在router.js中配置
+
+```js
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+  // 切换路由后滚动条置顶
+  scrollBehavior() {
+    return {
+      x: 0,
+      y: 0
+    }
+  }
+})
+export default route
+```
+
+第二步：在vue.config.js中加上如下配置
+
+```js
+module.exports = {
+  publicPath: '/',   //这个必须，引入静态资源需要从根路径引入，否则会找不到静态资源
+  devServer: {
+    // history模式下的url会请求到服务器端，但是服务器端并没有这一个资源文件，就会返回404，所以需要配置这一项
+    historyApiFallback: {
+      index: '/index.html' //与output的publicPath
+    },
+  },
+}
+```
+
+2.nginx解决办法：
+
+```bash
+  location / {
+    # 增加该行
+    try_files $uri $uri/ /index.html;
+  }
+```
