@@ -162,7 +162,7 @@ Vue.component('my-component', {
 
 综上所述，直接操作DOM会导致代码难以维护，因此在Vue中，建议使用声明式的方式来操作DOM，将DOM操作封装在组件内部，从而使得代码更加清晰和易于维护。使用组件化的方式，可以将DOM操作和业务逻辑分离，从而提高代码的重用性和可读性，降低出现bug的可能性。
 
-### Vue Router 有哪些模式
+## Vue Router 有哪些模式
 
 1. hash 模式：通过 `location.hash` 实现的，URL 中带有 #，如 `http://localhost:8080/#/home`。hash 模式不会向服务器发送请求，可以避免刷新页面时的重复请求，但是会导致 SEO 不友好。
 
